@@ -14,7 +14,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: leafletKey
 }).addTo(map);
 
-//searchIp();
+searchIp();
 document.getElementById("search-button").addEventListener('click', searchIp);
 document.getElementById("search-field").addEventListener('keypress', handleEnter);
 
