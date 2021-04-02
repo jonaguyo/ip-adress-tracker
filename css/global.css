@@ -87,7 +87,19 @@ body {
 }
 
 .tracker form input[type=text]:hover {
-  cursor: pointer;
+  cursor: text;
+}
+
+.tracker form input[type=text]:focus {
+  outline: none;
+}
+
+.tracker form input[type=text]:valid {
+  background-color: white;
+}
+
+.tracker form input[type=text]:invalid {
+  background-color: #e08383;
 }
 
 .tracker form #search-button {
@@ -102,7 +114,7 @@ body {
   background-position: center, center;
 }
 
-.tracker form #search:hover {
+.tracker form #search-button:hover {
   cursor: pointer;
   background: url("../images/icon-arrow.svg") no-repeat, #2b2b2b;
   background-position: center, center;
@@ -118,13 +130,15 @@ body {
   margin: 0;
   position: absolute;
   z-index: 2;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  right: 5%;
   padding: 40px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   border-radius: 20px;
   background-color: white;
+  -webkit-box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .informations .separator {
@@ -163,5 +177,58 @@ body {
   position: relative;
   z-index: 0;
   height: 70%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .informations {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+    padding: 20px;
+  }
+  .informations .separator {
+    display: none;
+  }
+  .informations .information {
+    max-width: none;
+  }
+  .informations .value {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 15px;
+  }
+  .informations {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px;
+  }
+  .informations .information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .informations .value {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=global.css.map */
